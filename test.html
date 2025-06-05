@@ -83,7 +83,7 @@
   {
   question: "Combien y a-t-il de continents sur Terre ?",
   reponses: ["5", "6", "7", "8"],
-  bonne: "7",
+  bonne: "5",
   niveau: "Facile",
    motCle:"coucou",
 },
@@ -313,20 +313,9 @@ const questions = tirerQuestionsSelonNiveau();
     let questionIndex = 0;
     let joueurIndex = 0;
 
-  function afficherScores() {
-  const joueursInfosDiv = document.getElementById("joueursInfos");
-  joueursInfosDiv.innerHTML = ""; // vide avant de remplir
+  
 
- joueurs.forEach(joueur => {
-  const p = document.createElement("p");
-  p.className = "joueur";
-  p.style.color = joueur.couleur;
-  p.id = `score-${joueur.nom.replace(/\s+/g, '')}`; // identifiant unique par joueur
-  p.textContent = `${joueur.nom} : ${joueur.score} point(s)`;
-  joueursInfosDiv.appendChild(p);
-});
-
-}
+ 
 
 
   function afficherQuestion() {
@@ -429,47 +418,41 @@ function verifier(reponse) {
   questionIndex++;
   joueurIndex = (joueurIndex + 1) % joueurs.length;
 
-  setTimeout(afficherQuestion, 5000);
+  setTimeout(() => {
+    if (questionIndex >= questions.length) {
+        afficherScoresFinaux();
+    } else {
+        afficherQuestion();
+    }
+}, 2000); // Délai de 2 secondes avant la prochaine question ou les scores
 }
 
-
-
-  function afficherScoresFinaux() {
+function afficherScoresFinaux() {
     clearInterval(timerInterval);
     const quiz = document.getElementById("quiz");
-    
-    // Trier les joueurs par score
+    quiz.className = ""; // Reset des classes
+
     const joueursTriés = [...joueurs].sort((a, b) => b.score - a.score);
     
-    // Créer le contenu HTML
-    const html = `
+    quiz.innerHTML = `
         <div class="score-final">
             <h2>🎮 Quiz terminé ! 🎮</h2>
             <h3>🏆 Classement final 🏆</h3>
             <div class="scores-list">
                 ${joueursTriés.map((joueur, index) => `
                     <div class="score-item ${index === 0 ? 'winner' : ''}">
-                        <span class="position">
-                            ${index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : (index + 1)}
-                        </span>
-                        <span class="nom" style="color:${joueur.couleur}">
-                            ${joueur.nom}
-                        </span>
-                        <span class="points">
-                            ${joueur.score} point${joueur.score > 1 ? 's' : ''}
-                        </span>
+                        <span class="medal">${index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : (index + 1)}</span>
+                        <span class="player-name" style="color: ${joueur.couleur}">${joueur.nom}</span>
+                        <span class="score">${joueur.score} point${joueur.score > 1 ? 's' : ''}</span>
                     </div>
                 `).join('')}
             </div>
-            <div class="boutons-final">
-                <button class="btn-final" onclick="rejouer()">🔄 Rejouer</button>
-                <button class="btn-final" onclick="allerAccueil()">🏠 Accueil</button>
+            <div class="buttons-container">
+                <button class="btn-final" onclick="window.location.reload()">🔄 Rejouer</button>
+                <button class="btn-final" onclick="window.location.href='index.html'">🏠 Accueil</button>
             </div>
         </div>
     `;
-
-    // Mettre à jour le contenu
-    quiz.innerHTML = html;
 }
 
 function rejouer() {
@@ -480,12 +463,15 @@ function rejouer() {
 }
 
 function allerAccueil() {
-    window.location.href = "index.html";
+    window.location.href = 'index.html';
 }
 
 
 
+ 
 
+
+    
     afficherQuestion();
 
     
