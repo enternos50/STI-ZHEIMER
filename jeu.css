@@ -131,3 +131,43 @@ h1 {
       margin-bottom: 10px;
       font-size: 1.1em;
     }
+
+    /* Responsive design */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  #quiz {
+    padding: 15px;
+    margin: 10px;
+    width: auto;
+  }
+
+  .reponse {
+    max-width: 100%;
+    margin: 8px auto;
+  }
+
+  #scoreSidebar {
+    position: static;
+    width: auto;
+    height: auto;
+    border-left: none;
+    border-top: 3px solid darkorange;
+    margin-top: 20px;
+  }
+
+  .question {
+    font-size: 1.2em;
+  }
+
+  #timer {
+    font-size: 1em;
+  }
+
+  .btn-accueil {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+}
