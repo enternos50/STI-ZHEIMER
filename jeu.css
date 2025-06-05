@@ -1,0 +1,133 @@
+/* Import d'une police moderne */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url(fond_question.png);
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #3f3d56;
+}
+
+#joueursInfos {
+  margin-bottom: 20px;
+}
+
+.joueur {
+  font-weight: bold;
+  margin: 5px;
+}
+
+#quiz {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.question {
+  font-size: 1.5em;
+  margin: 20px 0;
+  color: #444;
+}
+
+.reponse {
+  background: #e0e0e0;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin: 10px auto;
+  max-width: 300px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  font-size: 1.1em;
+}
+
+.reponse:hover {
+  background: #ffd166;
+  transform: scale(1.03);
+}
+
+#resultat {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#timer {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+#progress-container {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+  margin: 15px 0;
+}
+
+#progress-bar {
+  height: 100%;
+  background-color: green;
+  transition: width 1s linear, background-color 0.5s;
+}
+
+.btn-accueil, .btn-rejouer {
+  background: #3a86ff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1em;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-accueil:hover, .btn-rejouer:hover {
+  background: #265df2;
+  transform: scale(1.05);
+}
+
+
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+ #scoreSidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 220px;
+      height: 100vh;
+      background-color: #f5f5f5;
+      border-left: 3px solid darkorange;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      font-family: Arial, sans-serif;
+    }
+
+    #scoreSidebar h2 {
+      text-align: center;
+      color: darkorange;
+      margin-bottom: 15px;
+    }
+
+    #scoreSidebar .joueur {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
