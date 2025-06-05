@@ -108,16 +108,14 @@ h1 {
 
  #scoreSidebar {
       position: fixed;
-      top: 0;
       right: 0;
-      width: 220px;
-      height: 100vh;
-      background-color: #f5f5f5;
+      top: 0;
+      width: 200px;
+      height: 100%;
+      background: white;
       border-left: 3px solid darkorange;
       padding: 20px;
-      box-sizing: border-box;
       overflow-y: auto;
-      font-family: Arial, sans-serif;
     }
 
     #scoreSidebar h2 {
@@ -150,24 +148,43 @@ h1 {
   }
 
   #scoreSidebar {
-    position: static;
-    width: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    width: 100%;
     height: auto;
+    max-height: 30%;
     border-left: none;
     border-top: 3px solid darkorange;
-    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 100;
+  }
+
+  #quiz {
+    margin-bottom: 150px; /* Espace pour la barre de score */
+    padding-bottom: 20px;
   }
 
   .question {
-    font-size: 1.2em;
+    margin-bottom: 15px;
   }
 
-  #timer {
-    font-size: 1em;
+  #joueursInfos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
   }
 
-  .btn-accueil {
+  .joueur {
+    margin: 5px;
     font-size: 0.9em;
-    padding: 8px 15px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin: 5px 0;
   }
 }
