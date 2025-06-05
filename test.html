@@ -330,16 +330,16 @@ const questions = tirerQuestionsSelonNiveau();
 
 
   function afficherQuestion() {
-  
-  const quiz = document.getElementById("quiz");
-  quiz.classList.remove("fade-in");
-  quiz.classList.add("fade-out");
+    const quiz = document.getElementById("quiz");
+    quiz.classList.remove("fade-in");
+    quiz.classList.add("fade-out");
 
-  setTimeout(() => {
-    if (questionIndex >= questions.length) {
-      afficherScoresFinaux();
-      return;
-    }
+    setTimeout(() => {
+        // Vérifier si le quiz est terminé
+        if (questionIndex >= questions.length) {
+            afficherScoresFinaux();
+            return;
+        }
 
     const joueur = joueurs[joueurIndex];
     const q = questions[questionIndex];
@@ -436,51 +436,51 @@ function verifier(reponse) {
 
   function afficherScoresFinaux() {
     clearInterval(timerInterval);
-
-    // Trier les joueurs par score décroissant
+    const quiz = document.getElementById("quiz");
+    
+    // Trier les joueurs par score
     const joueursTriés = [...joueurs].sort((a, b) => b.score - a.score);
-
-    const quizDiv = document.getElementById("quiz");
-    quizDiv.innerHTML = `
+    
+    // Créer le contenu HTML
+    const html = `
         <div class="score-final">
             <h2>🎮 Quiz terminé ! 🎮</h2>
             <h3>🏆 Classement final 🏆</h3>
-            <ul>
-                ${joueursTriés.map((j, index) =>
-                    `<li>
-                        ${index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : ''}
-                        <span style="color:${j.couleur}">${j.nom}</span> : 
-                        ${j.score} point${j.score > 1 ? 's' : ''}
-                    </li>`
-                ).join("")}
-            </ul>
-            <div style="margin-top: 30px;">
-                <button id="btnRejouer" class="btn-final">🔄 Rejouer</button>
-                <button id="btnAccueil" class="btn-final">🏠 Accueil</button>
+            <div class="scores-list">
+                ${joueursTriés.map((joueur, index) => `
+                    <div class="score-item ${index === 0 ? 'winner' : ''}">
+                        <span class="position">
+                            ${index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : (index + 1)}
+                        </span>
+                        <span class="nom" style="color:${joueur.couleur}">
+                            ${joueur.nom}
+                        </span>
+                        <span class="points">
+                            ${joueur.score} point${joueur.score > 1 ? 's' : ''}
+                        </span>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="boutons-final">
+                <button class="btn-final" onclick="rejouer()">🔄 Rejouer</button>
+                <button class="btn-final" onclick="allerAccueil()">🏠 Accueil</button>
             </div>
         </div>
     `;
 
-    const btnRejouer = document.getElementById("btnRejouer");
-    const btnAccueil = document.getElementById("btnAccueil");
-
-    if (btnRejouer) btnRejouer.addEventListener("click", rejouer);
-    if (btnAccueil) btnAccueil.addEventListener("click", allerAccueil);
+    // Mettre à jour le contenu
+    quiz.innerHTML = html;
 }
 
-
-
 function rejouer() {
-  // Reset et relance du quiz avec les mêmes joueurs
-  questionsPosees = [];
-  joueurs.forEach(j => j.score = 0);
-  joueurActuelIndex = 0;
-  afficherQuestion();
+    questionIndex = 0;
+    joueurIndex = 0;
+    joueurs.forEach(j => j.score = 0);
+    afficherQuestion();
 }
 
 function allerAccueil() {
-  // Redirection vers la page d'accueil
-  window.location.href = "index.html"; // ou change selon ton fichier
+    window.location.href = "index.html";
 }
 
 
