@@ -51,6 +51,13 @@
   theme: "Basket",
   niveau: "Facile"
 },
+ {
+    question: "Dans quelle ville se trouve la franchise NBA des Bulls ?",
+    theme: "Basket",
+    niveau: "Facile",
+    choix: ["Los Angeles", "New York", "Miami", "Chicago"],
+    bonneReponse: "Chicago",
+  },
 {
   question: "Quel est le nom du championnat nord-américain de basket ?",
   reponses: ["NBA", "NFL", "MLB", "NHL"],
@@ -58,6 +65,20 @@
   theme: "Basket",
   niveau: "Facile"
 },
+{
+    question: "Quel joueur français a remporté un titre NBA avec les San Antonio Spurs ?",
+    theme: "Basket",
+    niveau: "Facile",
+    choix: ["Evan Fournier", "Tony Parker", "Nicolas Batum", "Rudy Gobert"],
+    bonneReponse: "Tony Parker",
+  },
+{
+    question: "Quel est le nom de la ligue professionnelle féminine de basket-ball aux États-Unis ?",
+    niveau: "Facile",
+    choix: ["NBA", "NCAA", "WNBA", "FIBA"],
+    bonneReponse: "WNBA",
+     theme: "Basket",
+  },
 {
   question: "Quel est l'objet principal que l'on utilise pour jouer au basket ?",
   reponses: ["Ballon", "Raquette", "Balle", "Puck"],
@@ -67,14 +88,7 @@
 }
 ,
   
-  {
-    question: "Quel joueur est surnommé 'King James' ?",
-    reponses: ["Kobe Bryant", "LeBron James", "Stephen Curry", "Michael Jordan"],
-    bonne: "LeBron James",
-    niveau: "Moyen",
-    motCle: "surnom",
-    theme: "Basket"
-  },
+ 
       {
   question: "Combien font 2 + 2 ?",
   reponses: ["3", "4", "5", "6"],
@@ -137,7 +151,6 @@
   reponses: ["Bleu", "Rouge", "Vert", "Noir"],
   bonne: "Rouge",
   niveau: "Facile",
-   motCle:"coucou",
     theme: "Culture Générale"
 },
 {
@@ -160,12 +173,41 @@
 
 
 {
+    question: "Quel joueur a popularisé le tir à 3 points dans les années 2010 ?",
+    theme: "Basket",
+    niveau: "Moyen",
+    choix: ["Stephen Curry", "Ray Allen", "James Harden", "Dirk Nowitzki"],
+    bonneReponse: "Stephen Curry",
+  },
+{
+    question: "Combien de temps dure un quart-temps en NBA ?",
+    theme: "Basket",
+    niveau: "Moyen",
+    choix: ["10 minutes", "15 minutes", "12 minutes", "8 minutes"],
+    bonneReponse: "12 minutes",
+  },
+ {
+    question: "Quel joueur est surnommé 'King James' ?",
+    reponses: ["Kobe Bryant", "LeBron James", "Stephen Curry", "Michael Jordan"],
+    bonne: "LeBron James",
+    niveau: "Moyen",
+    motCle: "surnom",
+    theme: "Basket"
+  },
+{
   question: "Combien de points vaut un tir réussi derrière la ligne des 3 points ?",
   reponses: ["3", "2", "1", "4"],
   bonneReponse: "3",
   theme: "Basket",
   niveau: "Moyen"
 },
+{
+    question: "Combien de fautes personnelles entraîne une disqualification en NBA ?",
+    theme: "Basket",
+    niveau: "intermédiaire",
+    choix: ["5", "6", "7", "4"],
+    bonneReponse: "6",
+  },
 {
   question: "Quelle équipe a remporté le plus de titres NBA ?",
   reponses: ["Boston Celtics", "Chicago Bulls", "Golden State Warriors", "San Antonio Spurs"],
@@ -259,6 +301,39 @@
 ,
 
 
+{
+    question: "Quel joueur a remporté le plus de titres NBA ?",
+    theme: "basket",
+    niveau: "Difficile",
+    choix: ["Michael Jordan", "LeBron James", "Bill Russell", "Kareem Abdul-Jabbar"],
+    bonneReponse: "Bill Russell",
+  },
+   {
+    question: "Qu’est-ce qu’un 'triple-double' en basketball ?",
+    theme: "Basket",
+    niveau: "Difficile",
+    choix: [
+      "10 points, 10 passes, 10 rebonds",
+      "30 points, 10 passes, 10 rebonds",
+      "10 passes, 10 tirs, 10 fautes",
+      "10 rebonds, 10 fautes, 10 tirs"
+    ],
+    bonneReponse: "10 points, 10 passes, 10 rebonds",
+  },
+{
+    question: "Qui a été le MVP de la saison NBA 2023 ?",
+    reponses: ["Nikola Jokic", "Joel Embiid", "Luka Dončić", "Stephen Curry"],
+    bonne: "Joel Embiid",
+    theme: "Basket",
+    niveau: "Difficile"
+},
+{
+    question: "Quel pays a remporté la Coupe du Monde FIBA 2019 ?",
+    reponses: ["Espagne", "États-Unis", "Serbie", "France"],
+    bonne: "Espagne",
+    theme: "Basket",
+    niveau: "Difficile"
+},
 {
   question: "Qui détient le record du plus grand nombre de points inscrits en un match NBA ?",
   reponses: ["Wilt Chamberlain", "Michael Jordan", "Kobe Bryant", "Karl Malone"],
@@ -463,15 +538,15 @@ const questions = tirerQuestionsSelonNiveau();
     const reponsesDiv = document.getElementById("reponses");
     reponsesDiv.innerHTML = "";
 
-    const reponsesMelangees = melanger([...q.reponses]);
+    const reponsesMelangees = melanger([...(q.reponses || q.choix)]);
     reponsesMelangees.forEach(rep => {
-      const btn = document.createElement("div");
-      btn.className = "reponse";
-      btn.textContent = rep;
-      btn.onclick = () => verifier(rep);  // ici on ajoute l’event click
-      reponsesDiv.appendChild(btn);
+        const btn = document.createElement("div");
+        btn.className = "reponse";
+        btn.textContent = rep;
+        btn.onclick = () => verifier(rep);
+        reponsesDiv.appendChild(btn);
     });
-
+    
     document.getElementById("resultat").textContent = "";
 
     // Démarre le timer
@@ -519,7 +594,8 @@ function verifier(reponse) {
   });
 
   const questionActuelle = questions[questionIndex];
-  const bonne = questionActuelle.bonneReponse || questionActuelle.bonne;
+  // Prendre en compte les deux formats possibles de bonne réponse
+  const bonne = questionActuelle.bonne || questionActuelle.bonneReponse;
   const joueur = joueurs[joueurIndex];
   const resultat = document.getElementById("resultat");
 
