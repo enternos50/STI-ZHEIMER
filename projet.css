@@ -101,6 +101,18 @@ body {
     h2 {
       font-size: 1.5em;
     }
+
+    .theme-buttons {
+      flex-direction: column;
+      gap: 10px;
+      padding: 0 20px;
+    }
+
+    .theme-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+    }
   }
 
   h2 {
@@ -135,5 +147,37 @@ body {
 #envoyerBtn:hover {
   background-color: #ffa600;
   transform: scale(1.05);
+}
+
+.theme-selector {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.theme-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.theme-btn {
+  padding: 15px 25px;
+  border: 2px solid #ffd166;
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+.theme-btn.active {
+  background: #ffd166;
+  transform: scale(1.05);
+}
+
+.theme-btn:hover {
+  background: #fff3d4;
 }
 

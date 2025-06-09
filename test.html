@@ -45,11 +45,50 @@
     // Questions du quiz
     const toutesLesQuestions = [
       {
+  question: "Combien de joueurs y a-t-il dans une équipe de basket sur le terrain ?",
+  reponses: ["5", "6", "7", "4"],
+  bonneReponse: "5",
+  theme: "Basket",
+  niveau: "Facile"
+},
+{
+  question: "Quel est le nom du championnat nord-américain de basket ?",
+  reponses: ["NBA", "NFL", "MLB", "NHL"],
+  bonneReponse: "NBA",
+  theme: "Basket",
+  niveau: "Facile"
+},
+{
+  question: "Quel est l'objet principal que l'on utilise pour jouer au basket ?",
+  reponses: ["Ballon", "Raquette", "Balle", "Puck"],
+  bonneReponse: "Ballon",
+  theme: "Basket",
+  niveau: "Facile"
+}
+,
+       {
+    question: "Combien de joueurs y a-t-il dans une équipe de basket sur le terrain ?",
+    reponses: ["4", "5", "6", "7"],
+    bonne: "5",
+    niveau: "Facile",
+    motCle: "équipe",
+    theme: "Basket"
+  },
+  {
+    question: "Quel joueur est surnommé 'King James' ?",
+    reponses: ["Kobe Bryant", "LeBron James", "Stephen Curry", "Michael Jordan"],
+    bonne: "LeBron James",
+    niveau: "Moyen",
+    motCle: "surnom",
+    theme: "Basket"
+  },
+      {
   question: "Combien font 2 + 2 ?",
   reponses: ["3", "4", "5", "6"],
   bonne: "4",
   niveau: "Facile",
   motCle:"coucou",
+  theme: "Culture Générale"
 },
 {
   question: "Quel fruit est jaune et courbé ?",
@@ -57,6 +96,7 @@
   bonne: "Banane",
   niveau: "Facile",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 {
   question: "Quel est le contraire de jour ?",
@@ -64,6 +104,7 @@
   bonne: "Nuit",
   niveau: "Facile",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 {
   question: "Quel est le cinquième mois de l'année ?",
@@ -71,6 +112,7 @@
   bonne: "Mai",
   niveau: "Facile",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 {
   question: "Quel animal miaule ?",
@@ -78,6 +120,7 @@
   bonne: "Chat",
   niveau: "Facile",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 
   {
@@ -86,6 +129,7 @@
   bonne: "5",
   niveau: "Facile",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 {
   question: "Quel est l'animal symbole de la France ?",
@@ -93,6 +137,7 @@
   bonne: "Coq",
   niveau: "Facile",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 {
   question: "Quelle est la couleur du sang ?",
@@ -100,6 +145,7 @@
   bonne: "Rouge",
   niveau: "Facile",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 {
   question: "Quel est le plus grand océan du monde ?",
@@ -107,6 +153,7 @@
   bonne: "Pacifique",
   niveau: "Facile",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 {
   question: "Dans quel pays se trouve la tour Eiffel ?",
@@ -114,6 +161,30 @@
   bonne: "France",
   niveau: "Facile",
    motCle:"coucou",
+    theme: "Culture Générale"
+},
+
+
+{
+  question: "Quel joueur est surnommé 'King James' ?",
+  reponses: ["LeBron James", "Stephen Curry", "Kevin Durant", "Kobe Bryant"],
+  bonneReponse: "LeBron James",
+  theme: "Basket",
+  niveau: "Moyen"
+},
+{
+  question: "Combien de points vaut un tir réussi derrière la ligne des 3 points ?",
+  reponses: ["3", "2", "1", "4"],
+  bonneReponse: "3",
+  theme: "Basket",
+  niveau: "Moyen"
+},
+{
+  question: "Quelle équipe a remporté le plus de titres NBA ?",
+  reponses: ["Boston Celtics", "Chicago Bulls", "Golden State Warriors", "San Antonio Spurs"],
+  bonneReponse: "Boston Celtics",
+  theme: "Basket",
+  niveau: "Moyen"
 }
 
   ,
@@ -123,6 +194,7 @@
   bonne: "6",
   niveau: "Moyen",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 {
   question: "Quelle est la langue officielle du Brésil ?",
@@ -130,6 +202,7 @@
   bonne: "Portugais",
   niveau: "Moyen",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 {
   question: "Qui a écrit 'Le Petit Prince' ?",
@@ -137,12 +210,14 @@
   bonne: "Saint-Exupéry",
   niveau: "Moyen",
    motCle:"coucou",
+    theme: "Culture Générale"
 },
 {
   question: "Quelle est la capitale de l’Australie ?",
   reponses: ["Sydney", "Melbourne", "Canberra", "Brisbane"],
   bonne: "Canberra",
   niveau: "Moyen",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -150,6 +225,7 @@
   reponses: ["3", "4", "5", "6"],
   bonne: "6",
   niveau: "Moyen",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 
@@ -158,6 +234,7 @@
   reponses: ["Picasso", "Michel-Ange", "Léonard de Vinci", "Monet"],
   bonne: "Léonard de Vinci",
   niveau: "Moyen",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -165,6 +242,7 @@
   reponses: ["Mars", "Vénus", "Mercure", "Terre"],
   bonne: "Mercure",
   niveau: "Moyen",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -172,6 +250,7 @@
   reponses: ["Victor Hugo", "Molière", "Voltaire", "Émile Zola"],
   bonne: "Victor Hugo",
   niveau: "Moyen",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -179,6 +258,7 @@
   reponses: ["Toronto", "Vancouver", "Ottawa", "Montréal"],
   bonne: "Ottawa",
   niveau: "Moyen",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -186,7 +266,32 @@
   reponses: ["9", "10", "11", "12"],
   bonne: "11",
   niveau: "Moyen",
+  theme: "Culture Générale",
    motCle:"coucou",
+}
+,
+
+
+{
+  question: "Qui détient le record du plus grand nombre de points inscrits en un match NBA ?",
+  reponses: ["Wilt Chamberlain", "Michael Jordan", "Kobe Bryant", "Karl Malone"],
+  bonneReponse: "Wilt Chamberlain",
+  theme: "Basket",
+  niveau: "Difficile"
+},
+{
+  question: "En quelle année la Dream Team a-t-elle participé aux Jeux Olympiques ?",
+  reponses: ["1992", "1988", "1996", "2000"],
+  bonneReponse: "1992",
+  theme: "Basket",
+  niveau: "Difficile"
+},
+{
+  question: "Quel joueur a remporté le plus de titres de MVP en saison régulière ?",
+  reponses: ["Kareem Abdul-Jabbar", "Michael Jordan", "LeBron James", "Bill Russell"],
+  bonneReponse: "Kareem Abdul-Jabbar",
+  theme: "Basket",
+  niveau: "Difficile"
 }
 ,
  {
@@ -194,6 +299,7 @@
   reponses: ["Fluor", "Fer", "Francium", "Phosphore"],
   bonne: "Fer",
   niveau: "Difficile",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -201,6 +307,7 @@
   reponses: ["Rome", "Madrid", "Paris", "Lisbonne"],
   bonne: "Madrid",
   niveau: "Difficile",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -208,6 +315,7 @@
   reponses: ["Italie", "Grèce", "France", "Chine"],
   bonne: "Grèce",
   niveau: "Difficile",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -215,6 +323,7 @@
   reponses: ["1965", "1969", "1972", "1959"],
   bonne: "1969",
   niveau: "Difficile",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -222,6 +331,7 @@
   reponses: ["Amazone", "Nil", "Mississippi", "Yangtsé"],
   bonne: "Amazone",
   niveau: "Difficile",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -229,6 +339,7 @@
   reponses: ["Edison", "Bell", "Tesla", "Newton"],
   bonne: "Bell",
   niveau: "Difficile",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -236,6 +347,7 @@
   reponses: ["Acide sulfurique", "Acide citrique", "Acide chlorhydrique", "Acide acétique"],
   bonne: "Acide chlorhydrique",
   niveau: "Difficile",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -243,6 +355,7 @@
   reponses: ["Anglais", "Espagnol", "Arabe", "Chinois mandarin"],
   bonne: "Chinois mandarin",
   niveau: "Difficile",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -250,6 +363,7 @@
   reponses: ["Einstein", "Galilée", "Bohr", "Newton"],
   bonne: "Einstein",
   niveau: "Difficile",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 {
@@ -257,6 +371,7 @@
   reponses: ["Canada", "Chine", "États-Unis", "Russie"],
   bonne: "Russie",
   niveau: "Difficile",
+  theme: "Culture Générale",
    motCle:"coucou",
 },
 
@@ -270,29 +385,55 @@ let tempsRestant = 15; // secondes par question
 
 // Fonction pour tirer X questions aléatoires de chaque niveau
 function tirerQuestionsSelonNiveau() {
-  const faciles = toutesLesQuestions.filter(q => q.niveau === "Facile");
-  const moyens = toutesLesQuestions.filter(q => q.niveau === "Moyen");
-  const difficiles = toutesLesQuestions.filter(q => q.niveau === "Difficile");
+    const themeQuiz = localStorage.getItem("themeQuiz") || "Culture Générale";
+    const niveauQuiz = localStorage.getItem("niveauQuiz") || "Mixte";
 
-  if (niveauQuiz === "Facile") {
-    return faciles.sort(() => 0.5 - Math.random()).slice(0, 10);
-  } else if (niveauQuiz === "Moyen") {
-    return moyens.sort(() => 0.5 - Math.random()).slice(0, 10);
-  } else if (niveauQuiz === "Difficile") {
-    return difficiles.sort(() => 0.5 - Math.random()).slice(0, 10);
-  } else {
-    // Mixte : 4 faciles + 4 moyens + 2 difficiles
-    function tirer(questions, count) {
-      return [...questions].sort(() => 0.5 - Math.random()).slice(0, count);
+    // Filtrer d'abord par thème
+    let questionsFiltrees = toutesLesQuestions;
+    if (themeQuiz === "Basket") {
+        questionsFiltrees = toutesLesQuestions.filter(q => q.theme === "Basket");
+    } else if (themeQuiz === "Culture Générale") {
+        questionsFiltrees = toutesLesQuestions.filter(q => q.theme === "Culture Générale");
     }
 
-    return [
-      ...tirer(faciles, 4),
-      ...tirer(moyens, 4),
-      ...tirer(difficiles, 2)
-    ];
-  }
+    // Ensuite filtrer par niveau
+    const faciles = questionsFiltrees.filter(q => q.niveau === "Facile");
+    const moyens = questionsFiltrees.filter(q => q.niveau === "Moyen");
+    const difficiles = questionsFiltrees.filter(q => q.niveau === "Difficile");
+
+    let questionsSelectionnees = [];
+
+    // Sélection selon le niveau
+    switch(niveauQuiz) {
+        case "Facile":
+            questionsSelectionnees = melanger(faciles).slice(0, 10);
+            break;
+        case "Moyen":
+            questionsSelectionnees = melanger(moyens).slice(0, 10);
+            break;
+        case "Difficile":
+            questionsSelectionnees = melanger(difficiles).slice(0, 10);
+            break;
+        default: // Mixte
+            questionsSelectionnees = [
+                ...melanger(faciles).slice(0, 4),
+                ...melanger(moyens).slice(0, 4),
+                ...melanger(difficiles).slice(0, 2)
+            ];
+    }
+
+    // Si pas assez de questions, compléter avec d'autres niveaux
+    if (questionsSelectionnees.length < 10) {
+        const questionsRestantes = questionsFiltrees
+            .filter(q => !questionsSelectionnees.includes(q));
+        const complement = melanger(questionsRestantes)
+            .slice(0, 10 - questionsSelectionnees.length);
+        questionsSelectionnees = [...questionsSelectionnees, ...complement];
+    }
+
+    return questionsSelectionnees;
 }
+
 
 const questions = tirerQuestionsSelonNiveau();
 
@@ -398,7 +539,7 @@ function verifier(reponse) {
   });
 
   const questionActuelle = questions[questionIndex];
-  const bonne = questionActuelle.bonne;
+  const bonne = questionActuelle.bonneReponse || questionActuelle.bonne;
   const joueur = joueurs[joueurIndex];
   const resultat = document.getElementById("resultat");
 
