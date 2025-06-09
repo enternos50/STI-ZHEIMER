@@ -1,4 +1,3 @@
-
 /* Import d'une police moderne */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -141,147 +140,111 @@ h1 {
     padding: 15px;
     margin: 10px;
     width: auto;
+    max-width: 100%;
+    min-height: calc(100vh - 20px);
+  }
+
+  .question {
+    font-size: 1.2em;
+    margin: 15px 0;
+    padding: 0 10px;
   }
 
   .reponse {
     max-width: 100%;
     margin: 8px auto;
+    padding: 15px;
+    font-size: 1em;
   }
 
-  #scoreSidebar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: auto;
-    width: 100%;
-    height: auto;
-    max-height: 30%;
-    border-left: none;
-    border-top: 3px solid darkorange;
-    background: rgba(255, 255, 255, 0.95);
-    z-index: 100;
+  #timer {
+    font-size: 1.5em;
+    margin: 15px 0;
   }
 
-  #quiz {
-    margin-bottom: 150px; /* Espace pour la barre de score */
-    padding-bottom: 20px;
+  #progress-container {
+    margin: 10px 15px;
   }
 
-  .question {
-    margin-bottom: 15px;
-  }
-
-  #joueursInfos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 10px;
-  }
-
-  .joueur {
-    margin: 5px;
+  .btn-music {
+    top: 5px;
+    right: 5px;
+    padding: 6px 12px;
     font-size: 0.9em;
   }
 
-  h2 {
-    font-size: 1.2em;
-    margin: 5px 0;
+  .score-final {
+    margin: 10px;
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .score-item {
+    padding: 12px;
+    margin: 8px 0;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .btn-final {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+  }
+
+  #joueurActuel {
+    font-size: 1.1em;
+    padding: 10px;
   }
 }
 
-#scoreSidebar {
-    display: none; /* Cache complètement la barre de score pendant le jeu */
-}
-
-.score-final {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: center;
-}
-
-.scores-list {
-    margin: 20px 0;
-}
-
-.score-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    margin: 10px 0;
-    background: #f8f8f8;
-    border-radius: 10px;
-    transition: transform 0.2s;
-}
-
-.score-item.winner {
-    background: #fff3d4;
-    transform: scale(1.05);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.score-item .medal {
-    font-size: 1.2em;
-    min-width: 30px;
-}
-
-.score-item .player-name {
-    font-weight: bold;
-    flex-grow: 1;
-    text-align: center;
-}
-
-.score-item .score {
-    font-weight: bold;
-    min-width: 80px;
-    text-align: right;
-}
-
-.buttons-container {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-final {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+/* Ajout d'un media query pour les très petits écrans */
+@media screen and (max-width: 320px) {
+  .question {
     font-size: 1.1em;
-    background: #ffd166;
-    transition: transform 0.2s, background 0.3s;
+  }
+
+  .reponse {
+    padding: 12px;
+    font-size: 0.9em;
+  }
+
+  #timer {
+    font-size: 1.3em;
+  }
+
+  .score-item {
+    font-size: 0.8em;
+  }
 }
 
-.btn-final:hover {
-    background: #ffa600;
-    transform: scale(1.05);
+/* Ajout d'un media query pour les tablettes */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #quiz {
+    max-width: 90%;
+  }
+
+  .reponse {
+    max-width: 80%;
+  }
 }
 
-@media screen and (max-width: 768px) {
-    .score-final {
-        margin: 10px;
-        padding: 15px;
-    }
+/* Optimisations pour les grands écrans */
+@media screen and (min-width: 1025px) {
+  #quiz {
+    max-width: 800px;
+  }
 
-    .score-item {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
+  .question {
+    font-size: 1.8em;
+  }
 
-    .buttons-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .btn-final {
-        width: 100%;
-        padding: 15px;
-    }
+  .reponse {
+    max-width: 400px;
+    font-size: 1.2em;
+  }
 }

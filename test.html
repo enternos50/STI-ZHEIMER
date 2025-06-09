@@ -33,7 +33,16 @@
     <div id="joueursInfos"></div>
   </aside>
 
+  <audio id="bgMusic" autoplay loop>
+    <source src="chanson jeu.mp3" type="audio/mpeg">
+    Ton navigateur ne supporte pas l'audio HTML5.
+</audio>
+
+
+
   <script>
+
+    
 
     function melanger(array) {
   return array.sort(() => 0.5 - Math.random());
@@ -85,10 +94,50 @@
   bonneReponse: "Ballon",
   theme: "Basket",
   niveau: "Facile"
-}
+},
+  {
+    question: "Quel joueur français a été drafté en 1re position à la NBA en 2023 ?",
+    theme: "Basket",
+    niveau: "Facile",
+    choix: ["Killian Hayes", "Victor Wembanyama", "Théo Maledon", "Bilal Coulibaly"],
+    bonneReponse: "Victor Wembanyama"
+  },
+  {
+    question: "Quelle est la fédération qui gère le basket en France ?",
+    theme: "Basket",
+    niveau: "Facile",
+    choix: ["FFF", "FFBB", "LNB", "FIBA Europe"],
+    bonneReponse: "FFBB"
+  }
+
+
 ,
   
  
+  {
+    question: "Quel club français joue ses matchs à domicile à l’Astroballe ?",
+    theme: "Basket",
+    niveau: "Moyen",
+    choix: ["Strasbourg", "ASVEL", "Cholet", "Monaco"],
+    bonneReponse: "ASVEL"
+  },
+  {
+    question: "Quel club a remporté la Betclic Élite en 2023 ?",
+    theme: "Basket",
+    niveau: "Moyen",
+    choix: ["ASVEL", "Monaco", "Limoges", "Dijon"],
+    bonneReponse: "Monaco"
+  },
+ 
+  {
+    question: "Dans quel club Tony Parker a-t-il débuté sa carrière professionnelle ?",
+    theme: "Basket",
+    niveau: "Moyen",
+    choix: ["Paris Basket", "ASVEL", "INSEP", "Paris Basket Racing"],
+    bonneReponse: "Paris Basket Racing"
+  }
+
+,
       {
   question: "Combien font 2 + 2 ?",
   reponses: ["3", "4", "5", "6"],
@@ -169,6 +218,7 @@
    motCle:"coucou",
     theme: "Culture Générale"
 },
+
 
 
 
@@ -301,6 +351,51 @@
 ,
 
 
+
+  {
+    question: "Quel club français détient le plus de titres de champion de France de Pro A ?",
+    theme: "Basket",
+    niveau: "Difficile",
+    choix: ["ASVEL", "Limoges CSP", "Pau-Orthez", "Le Mans"],
+    bonneReponse: "ASVEL"
+  },
+  {
+    question: "Quel joueur français est surnommé 'Le Général' ?",
+    theme: "Basket",
+    niveau: "Difficile",
+    choix: ["Antoine Diot", "Tony Parker", "Thomas Heurtel", "Nando De Colo"],
+    bonneReponse: "Nando De Colo"
+  },
+  {
+    question: "Combien de joueurs français étaient dans l’effectif de l’équipe de France masculine lors des JO de Tokyo 2021 ?",
+    theme: "Basket",
+    niveau: "Difficile",
+    choix: ["10", "12", "13", "11"],
+    bonneReponse: "12"
+  },
+  {
+    question: "Quel joueur français détient le record de points marqués dans un match NBA ?",
+    theme: "Basket",
+    niveau: "Difficile",
+    choix: ["Tony Parker", "Evan Fournier", "Boris Diaw", "Victor Wembanyama"],
+    bonneReponse: "Evan Fournier"
+  }
+,
+  {
+    question: "Quel est le nom de la compétition européenne de clubs de basket ?",
+    theme: "Basket",
+    niveau: "Difficile",
+    choix: ["Euroleague", "Eurocup", "FIBA Champions League", "Basketball Champions League"],
+    bonneReponse: "Euroleague"
+  },
+
+ {
+    question: "Quel club féminin est le plus titré en Ligue Féminine de Basket (LFB) ?",
+    theme: "Basket",
+    niveau: "Difficile",
+    choix: ["Tango Bourges Basket", "Lattes-Montpellier", "Lyon ASVEL Féminin", "Villeneuve-d'Ascq"],
+    bonneReponse: "Tango Bourges Basket"
+  },
 {
     question: "Quel joueur a remporté le plus de titres NBA ?",
     theme: "basket",
@@ -663,17 +758,37 @@ function allerAccueil() {
     window.location.href = 'index.html';
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const bgMusic = document.getElementById('bgMusic');
+    bgMusic.volume = 0.5; // Volume à 50%
+    
+    const musicBtn = document.createElement('button');
+    musicBtn.innerHTML = '🎵 Musique';
+    musicBtn.className = 'btn-music';
+    
+    let isMusicPlaying = false;
+    
+    musicBtn.onclick = function() {
+        if (isMusicPlaying) {
+            bgMusic.pause();
+            musicBtn.innerHTML = '🔇 Musique';
+        } else {
+            bgMusic.play();
+            musicBtn.innerHTML = '🎵 Musique';
+        }
+        isMusicPlaying = !isMusicPlaying;
+    };
+    
+    document.body.insertBefore(musicBtn, document.body.firstChild);
+});
 
 
- 
+
 
 
     
     afficherQuestion();
 
-    
-
   </script>
-
-</body>
-</html>
+  </body>
+  </html>
